@@ -11,3 +11,15 @@ aprender na prática a criar testes automatizados para seus projetos Spring Boot
   - Separação dos testes em fases
   - Testes/análise de cobertura com o Jacoco
   - Testes mutantes com o Pitest
+
+Algumas tecnologias que serão vistas são: Spring Boot Test, Junit 5, Mockito, AssertJ, Hamcrest, JsonPath, Jacoco, e Pitest.
+
+Com testes automatizados nós obtemos as seguintes vantagens:
+
+    Código mais estável, podemos mudar sem medo de quebrá-lo
+
+    É fácil de verificar se software funciona, basta rodar os testes na sua máquina
+
+    Temos confiança em mudar o software, pois podemos rodar os testes para checar se um bug acidental foi introduzido
+
+    E por causa de tudo isso, testes automatizados são aplamente usados pelas grandes empresas

@@ -16,10 +16,7 @@ Algumas tecnologias que serão vistas são: Spring Boot Test, Junit 5, Mockito, 
 
 Com testes automatizados nós obtemos as seguintes vantagens:
 
-    Código mais estável, podemos mudar sem medo de quebrá-lo
-
-    É fácil de verificar se software funciona, basta rodar os testes na sua máquina
-
-    Temos confiança em mudar o software, pois podemos rodar os testes para checar se um bug acidental foi introduzido
-
-    E por causa de tudo isso, testes automatizados são aplamente usados pelas grandes empresas
+  - Código mais estável, podemos mudar sem medo de quebrá-lo
+  - É fácil de verificar se software funciona, basta rodar os testes na sua máquina
+  - Temos confiança em mudar o software, pois podemos rodar os testes para checar se um bug acidental foi introduzido
+  - E por causa de tudo isso, testes automatizados são aplamente usados pelas grandes empresas

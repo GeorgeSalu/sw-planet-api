@@ -21,9 +21,9 @@ Com testes automatizados nós obtemos as seguintes vantagens:
   - Temos confiança em mudar o software, pois podemos rodar os testes para checar se um bug acidental foi introduzido.
   - E por causa de tudo isso, testes automatizados são aplamente usados pelas grandes empresas.
 
-Topicos incluidos
+Tópicos incluidos
   
-  - Criar testes de unidade, integração e subcutâneos
-  - Spring Boot Test, Junit 5, Mockito, AssertJ, Hamcrest, JsonPath, Jacoco, Pitest
-  - Construir bons designs de software prezando pela sua testabilidade
-  - Criar testes eficientes com execução otimizada, análise de cobertura, testes mutantes e testcontainers
+  - Criar testes de unidade, integração e subcutâneos.
+  - Spring Boot Test, Junit 5, Mockito, AssertJ, Hamcrest, JsonPath, Jacoco, Pitest.
+  - Construir bons designs de software prezando pela sua testabilidade.
+  - Criar testes eficientes com execução otimizada, análise de cobertura, testes mutantes e testcontainers.

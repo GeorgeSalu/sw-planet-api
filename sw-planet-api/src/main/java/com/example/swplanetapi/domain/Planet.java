@@ -69,7 +69,9 @@ public class Planet {
 
 	@Override
 	public String toString() {
-		return "Planet [id=" + id + ", name=" + name + ", climate=" + climate + ", terrain=" + terrain + "]";
+		return "Planet [" + (id != null ? "id=" + id + ", " : "") + (name != null ? "name=" + name + ", " : "")
+				+ (climate != null ? "climate=" + climate + ", " : "") + (terrain != null ? "terrain=" + terrain : "")
+				+ "]";
 	}
 
 }

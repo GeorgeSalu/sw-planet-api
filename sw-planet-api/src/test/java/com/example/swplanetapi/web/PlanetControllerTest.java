@@ -17,7 +17,11 @@ import static com.example.swplanetapi.common.PlanetConstants.PLANET;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.Optional;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @WebMvcTest(controllers = PlanetController.class)
@@ -62,6 +66,21 @@ public class PlanetControllerTest {
 		mockMvc.perform(post("/planets").content(objectMapper.writeValueAsString(PLANET))
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isConflict());
+	}
+	
+	@Test
+	public void getPlanet_ByExistingId_ReturnsPlanet() throws JsonProcessingException, Exception {
+		when(planetService.get(1l)).thenReturn(Optional.of(PLANET));
+		
+		mockMvc.perform(get("/planets/1"))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$").value(PLANET));
+	}
+	
+	@Test
+	public void getPlanet_ByUnexistingId_ReturnsNoForound() throws JsonProcessingException, Exception {
+		mockMvc.perform(get("/planets/1"))
+				.andExpect(status().isNotFound());
 	}
 }
 

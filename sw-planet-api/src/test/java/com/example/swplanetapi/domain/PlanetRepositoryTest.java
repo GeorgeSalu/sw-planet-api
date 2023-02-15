@@ -9,7 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 @DataJpaTest
-public class PLanetRepositoryTest {
+public class PlanetRepositoryTest {
 	@Autowired
 	private PlanetRepository planetRepository;
 	

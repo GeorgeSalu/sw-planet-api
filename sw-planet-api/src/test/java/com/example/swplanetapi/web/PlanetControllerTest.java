@@ -78,7 +78,7 @@ public class PlanetControllerTest {
 	}
 	
 	@Test
-	public void getPlanet_ByUnexistingId_ReturnsNoForound() throws JsonProcessingException, Exception {
+	public void getPlanet_ByUnexistingId_ReturnsNoFound() throws JsonProcessingException, Exception {
 		mockMvc.perform(get("/planets/1"))
 				.andExpect(status().isNotFound());
 	}

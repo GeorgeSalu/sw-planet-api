@@ -7,6 +7,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.example.swplanetapi.domain.Planet;
 import com.example.swplanetapi.domain.PlanetService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,4 +38,21 @@ public class PlanetControllerTest {
 			.andExpect(status().isCreated())
 			.andExpect(jsonPath("$").value(PLANET));
 	}
+	
+	@Test
+	public void createPlanet_WithInvalidData_ReturnsDabRequest() throws JsonProcessingException, Exception {
+		Planet emptyPlanet = new Planet();
+		Planet invalidPlanet = new Planet("","","");
+		
+		mockMvc.perform(post("/planets").content(objectMapper.writeValueAsString(emptyPlanet))
+			.contentType(MediaType.APPLICATION_JSON))
+			.andExpect(status().isUnprocessableEntity());
+		
+		mockMvc.perform(post("/planets").content(objectMapper.writeValueAsString(invalidPlanet))
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isUnprocessableEntity());
+	}
 }
+
+
+

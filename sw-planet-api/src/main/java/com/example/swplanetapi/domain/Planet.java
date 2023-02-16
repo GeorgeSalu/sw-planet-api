@@ -13,79 +13,83 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 @Entity
 @Table(name = "planets")
 public class Planet {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@NotEmpty
-	@Column(nullable = false, unique = true)
-	private String name;
-	
-	@NotEmpty
-	@Column(nullable = false)
-	private String climate;
-	
-	@NotEmpty
-	@Column(nullable = false)
-	private String terrain;
+  @NotEmpty
+  @Column(nullable = false, unique = true)
+  private String name;
 
-	public Planet() {
-	}
-	
-	public Planet(String name, String climate, String terrain) {
-		this.name = name;
-		this.climate = climate;
-		this.terrain = terrain;
-	}
+  @NotEmpty
+  @Column(nullable = false)
+  private String climate;
 
-	public Planet(String climate, String terrain) {
-		this.climate = climate;
-		this.terrain = terrain;
-	}
+  @NotEmpty
+  @Column(nullable = false)
+  private String terrain;
 
-	public Long getId() {
-		return id;
-	}
+  public Planet() {
+  }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+  public Planet(String climate, String terrain) {
+    this.climate = climate;
+    this.terrain = terrain;
+  }
 
-	public String getName() {
-		return name;
-	}
+  public Planet(String name, String climate, String terrain) {
+    this.name = name;
+    this.climate = climate;
+    this.terrain = terrain;
+  }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+  public Planet(Long id, String name, String climate, String terrain) {
+    this.id = id;
+    this.name = name;
+    this.climate = climate;
+    this.terrain = terrain;
+  }
 
-	public String getClimate() {
-		return climate;
-	}
+  public Long getId() {
+    return id;
+  }
 
-	public void setClimate(String climate) {
-		this.climate = climate;
-	}
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-	public String getTerrain() {
-		return terrain;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public void setTerrain(String terrain) {
-		this.terrain = terrain;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	@Override
-	public boolean equals(Object obj) {
-		return EqualsBuilder.reflectionEquals(obj, this);
-	}
+  public String getClimate() {
+    return climate;
+  }
 
-	@Override
-	public String toString() {
-		return "Planet [" + (id != null ? "id=" + id + ", " : "") + (name != null ? "name=" + name + ", " : "")
-				+ (climate != null ? "climate=" + climate + ", " : "") + (terrain != null ? "terrain=" + terrain : "")
-				+ "]";
-	}
+  public void setClimate(String climate) {
+    this.climate = climate;
+  }
+
+  public String getTerrain() {
+    return terrain;
+  }
+
+  public void setTerrain(String terrain) {
+    this.terrain = terrain;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return EqualsBuilder.reflectionEquals(obj, this);
+  }
+
+  @Override
+  public String toString() {
+    return "Planet [climate=" + climate + ", id=" + id + ", name=" + name + ", terrain=" + terrain + "]";
+  }
 
 }

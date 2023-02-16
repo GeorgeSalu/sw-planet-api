@@ -77,7 +77,7 @@ public class PlanetRepositoryTest {
 	}
 	
 	@Test
-	public void getPlanet_byExistingName_ReturnsPlanet() throws Exception {
+	public void getPlanet_ByExistingName_ReturnsPlanet() throws Exception {
 		Planet planet = testEntityManager.persistFlushFind(PLANET);
 		
 		Optional<Planet> planetOpt = planetRepository.findByName(planet.getName());

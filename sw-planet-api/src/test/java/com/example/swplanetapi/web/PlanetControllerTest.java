@@ -84,7 +84,7 @@ public class PlanetControllerTest {
 	}
 	
 	@Test
-	public void getPlanet_byExistingName_ReturnsPlanet() throws Exception {
+	public void getPlanet_ByExistingName_ReturnsPlanet() throws Exception {
 		when(planetService.getByName(PLANET.getName())).thenReturn(Optional.of(PLANET));
 		
 		mockMvc.perform(get("/planets/name/" + PLANET.getName()))

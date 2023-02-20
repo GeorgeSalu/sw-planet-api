@@ -1,7 +1,7 @@
 ### sw-planet-api
 ### testes automatizados com Spring Boot na prática!
 
-aprender na prática a criar testes automatizados para seus projetos Spring Boot através da criação de uma API de planetas da franquia Star Wars!
+Aprender na prática a criar testes automatizados para seus projetos Spring Boot através da criação de uma API de planetas da franquia Star Wars!
 
   - Introdução à testes automatizados.
   - Tipos de teste e a pirâmide.
@@ -21,7 +21,7 @@ Com testes automatizados nós obtemos as seguintes vantagens:
   - Temos confiança em mudar o software, pois podemos rodar os testes para checar se um bug acidental foi introduzido.
   - E por causa de tudo isso, testes automatizados são aplamente usados pelas grandes empresas.
 
-Tópicos incluidos
+Tópicos incluidos.
   
   - Criar testes de unidade, integração e subcutâneos.
   - Spring Boot Test, Junit 5, Mockito, AssertJ, Hamcrest, JsonPath, Jacoco, Pitest.

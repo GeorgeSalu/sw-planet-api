@@ -14,6 +14,7 @@ import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import com.example.swplanetapi.domain.Planet;
 
 import static com.example.swplanetapi.common.PlanetConstants.PLANET;
+import static com.example.swplanetapi.common.PlanetConstants.TATOOINE;
 import static org.assertj.core.api.Assertions.*;
 
 @ActiveProfiles("it")
@@ -41,5 +42,6 @@ public class PlanetIT {
 		ResponseEntity<Planet> sut = restTemplate.getForEntity("/planets/1", Planet.class);
 		
 		assertThat(sut.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(sut.getBody()).isEqualTo(TATOOINE);
 	}
 }

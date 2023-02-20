@@ -8,6 +8,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 
 import com.example.swplanetapi.domain.Planet;
 
@@ -16,6 +18,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @ActiveProfiles("it")
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@Sql(scripts = {"/remove_planets.sql"}, executionPhase = ExecutionPhase.AFTER_TEST_METHOD)
 public class PlanetIT {
 	
 	@Autowired

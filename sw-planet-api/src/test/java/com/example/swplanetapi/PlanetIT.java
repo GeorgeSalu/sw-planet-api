@@ -24,11 +24,11 @@ import static org.assertj.core.api.Assertions.*;
 public class PlanetIT {
 	
 	@Autowired
-	private TestRestTemplate restTemplate;
+	private TestRestTemplate testRestTemplate;
 	
 	@Test
 	public void createPlanet_ReturnsCreated() {
-		ResponseEntity<Planet> sut = restTemplate.postForEntity("/planets", PLANET, Planet.class);
+		ResponseEntity<Planet> sut = testRestTemplate.postForEntity("/planets", PLANET, Planet.class);
 		
 		assertThat(sut.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 		assertThat(sut.getBody().getId()).isNotNull();
@@ -39,7 +39,7 @@ public class PlanetIT {
 	
 	@Test
 	public void getPlanets_returnsPlanets() {
-		ResponseEntity<Planet> sut = restTemplate.getForEntity("/planets/1", Planet.class);
+		ResponseEntity<Planet> sut = testRestTemplate.getForEntity("/planets/1", Planet.class);
 		
 		assertThat(sut.getStatusCode()).isEqualTo(HttpStatus.OK);
 		assertThat(sut.getBody()).isEqualTo(TATOOINE);

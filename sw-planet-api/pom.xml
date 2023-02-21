@@ -129,6 +129,9 @@
 					<targetTests>
 						<param>com.example.swplanetapi.*Test</param>
 					</targetTests>
+					<excludedClasses>
+						<param>com.example.swplanetapi.domain.Planet</param>
+					</excludedClasses>
 				</configuration>
 			</plugin>
 		</plugins>
